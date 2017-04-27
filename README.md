@@ -13,4 +13,5 @@ Here is a live demo: [Live Demo](https://arithxu.com/iA-Writer-Templates-Github-
 - [x] Sequence chart
 - [ ] More charts(under construction)
 
-## Preview 
+## Preview
+![](docs/assets/preview.png)
