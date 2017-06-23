@@ -3,12 +3,12 @@
 
 <head>
 	<meta charset="UTF-8">
-	<script type="text/javascript" src="modules/master.js"></script>
+	<script type="text/javascript" async src="modules/master.js"></script>
 	<link rel="stylesheet" media="all" href="modules/main.css">
 
 	<!-- Flow chart support -->
-	<script type="text/javascript" src="modules/raphael/raphael.min.js"></script>
-	<script type="text/javascript" src="modules/flowchart/flowchart.min.js"></script>
+	<script type="text/javascript"  src="modules/raphael/raphael.min.js"></script>
+	<script type="text/javascript"  src="modules/flowchart/flowchart.min.js"></script>
 
 	<!-- Github flavored markdown theme  -->
 	<link rel="stylesheet" media="all" href="modules/github-markdown/github.css">
@@ -18,7 +18,14 @@
 	<script type="text/javascript" src="modules/highlight/highlight.pack.js"></script>
 
 	<!-- Math expression  -->
-	<script type="text/javascript" src="modules/math/texzilla.js"></script>
+	<!-- <script type="text/javascript" src="modules/math/texzilla.js"></script> -->
+	<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<!-- <script type="text/javascript" async src="modules/math/MathJax/MathJax.js?config=TeX-MML-AM_CHTML">
+	</script> -->
+
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({jax: ["input/TeX","output/NativeMML"], tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, showMathMenu: false, messageStyle: "none" })
+	</script>
 
 	<!-- sequence chart support -->
 	<script type="text/javascript" src="modules/webfontloader/webfontloader.js"></script>
@@ -26,7 +33,6 @@
 	<script type="text/javascript" src="modules/underscore/underscore-min.js"></script>
 	<script type="text/javascript" src="modules/sequencechart/sequence-diagram-min.js"></script>
 	<link rel="stylesheet" media="all" href="modules/sequencechart/sequence-diagram-min.css">
-
 </head>
 
 <body class="markdown-body" data-document>&nbsp;</body>
