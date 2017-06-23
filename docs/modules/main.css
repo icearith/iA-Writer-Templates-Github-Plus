@@ -16,7 +16,6 @@ blockquote p {
 
 th {
   background-color: #eee;
-  font-weight: bold;
 }
 
 /* style for note tags */
@@ -39,4 +38,16 @@ th {
     background: rgba(44, 63, 81, 0.3);
     color: #fff;
     margin-right: 6px
+}
+
+
+/*Math jax*/
+
+.MathJax:focus, .mjx-chtml:focus, .MathJax_SVG:focus {
+   outline: none
+}
+
+span.mjx-chtml.MJXc-display {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
