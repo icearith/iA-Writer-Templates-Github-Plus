@@ -48,6 +48,6 @@ th {
 }
 
 span.mjx-chtml.MJXc-display {
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
 }
