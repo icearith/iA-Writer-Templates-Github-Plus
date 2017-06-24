@@ -2,6 +2,7 @@
 
 A custom Github flavored iA Writer template with math, graph, and amazing code syntax highlighting support.
 
+Check here for a [LIVE DEMO](https://arithxu.com/iA-Writer-Templates-Github-Plus/). 
 
 ## Features
 - [x] Tags
@@ -10,6 +11,7 @@ A custom Github flavored iA Writer template with math, graph, and amazing code s
 - [x] Code highlighting
 - [x] Flow chart
 - [x] Sequence chart
+- [x] Audio link 
 
 ## Preview
 ![](docs/assets/preview.png)
