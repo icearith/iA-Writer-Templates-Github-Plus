@@ -5,7 +5,8 @@
 @import 'github-markdown-mobile.css' screen and (max-width: 520px);
 
 html {
-  background-color: white;
+  background-color: #FBFBFB;
+  /* background-color: white; */
 }
 
 @media screen {

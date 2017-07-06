@@ -98,6 +98,15 @@ window.addEventListener('load', function() {
         }
     }
 
+    var processKatex = function() {
+        var elements = document.body.getElementsByClassName('math')
+        for (var i = 0, l = elements.length; i < l; i++) {
+            var element = elements[i]
+            var math = element.textContent.substr(2, element.textContent.length - 4)
+            katex.render(math, element);
+        }
+    }
+
     var processFlowchart = function() {
         var elements = document.getElementsByClassName('flow hljs')
         for (var i = 0, l = elements.length; i < l; i++) {
@@ -131,23 +140,12 @@ window.addEventListener('load', function() {
             var div_tmp = document.createElement('div')
             div_tmp_id = div_new_id + '_tmp_' + i
             div_tmp.setAttribute('id', div_tmp_id)
-            // div_tmp.setAttribute('style', 'display:none;')
-            // element.parentNode.insertBefore(div_tmp, element)
             element.parentNode.replaceChild(div_tmp, element)
 
             chart.drawSVG(div_tmp_id, {
                 theme: theme
             })
-
-            // get chart height and assign it to new div
-            // var height = div_tmp.firstChild.getAttribute('height')
-            // element.setAttribute('style', 'height:' + height + 'px;')
-
-            // copy chart to new div
-            // div_new.innerHTML = div_tmp.innerHTML
-            // element.parentNode.replaceChild(div_new, element)
         }
-
     }
 
     var processSequencechart = function() {
@@ -156,50 +154,6 @@ window.addEventListener('load', function() {
 
         renderSequenceChart(elements, 'simple')
         renderSequenceChart(elements_hand, 'hand')
-
-    }
-
-    // process mermaid
-    var processMermaid = function() {
-        var elements = document.getElementsByClassName('mermaid hljs')
-        var elements_tmp = []
-        for (var i = 0, l = elements.length; i < l; i++) {
-            // only get the first one in the array, because the previous one has been removed or replaced
-            var element = elements[0]
-            var code = element.innerText
-            var chart = flowchart.parse(code)
-
-
-
-            // create a temp div and draw on temp div
-            var div_tmp = document.createElement('div')
-            div_tmp.setAttribute('style', 'display:none;')
-            div_tmp.setAttribute('class', 'mermaid_tmp')
-            div_tmp.innerHTML = code
-            element.parentNode.insertBefore(div_tmp, element)
-            elements_tmp.push(div_tmp)
-            // chart.drawSVG(div_tmp_id)
-            // if (mermaid.parse(code)) {
-            //   // reRender(code)
-            // }
-        }
-
-        mermaid.init({
-            noteMargin: 10
-        }, ".mermaid_tmp")
-
-        //   for (var i = 0, l = elements_tmp.length; i < l; i++) {
-        //     div_tmp = elements_tmp[i]
-        //
-        //
-        //     // get chart height and assign it to new div
-        //     var height = div_tmp.firstChild.offsetHeight
-        //     div_tmp.nextSibling.setAttribute('style', 'height:' + height + 'px')
-        //     div_tmp.style.display = 'inline'
-        //
-        //
-        //   }
-        //
     }
 
     var processTags = function() {
@@ -270,14 +224,18 @@ window.addEventListener('load', function() {
 
                 link.parentNode.replaceChild(image_element, link) 
                 image_element.parentNode.insertBefore(audio_element, image_element)
-
                 
             }
         }
+    }
 
-
-        var test = []
-
+    var processTOC = function () {
+        var element = document.getElementsByClassName('TOC') || []
+        
+        if (element.length != 0){
+            var toc = element[0]
+            var test = []
+        }
     }
 
     var refresh = function() {
@@ -291,6 +249,8 @@ window.addEventListener('load', function() {
         processTags()
         processAudioLink()
         processTest()
+        // processKatex()
+        processTOC()
     }
     //refresh()
     document.body.addEventListener('ia-writer-change', refresh)
