@@ -1,0 +1,13 @@
+script:
+    - mkdir /tmp/github-plus.iatemplate
+    - cp ./* /tmp/github-plus.iatemplate 
+    - tar -czf /tmp/githu-plus.iatemplate
+    
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: /tmp/github-plus.iatemplate
+  skip_cleanup: true
+  on:
+    tags: true
+
