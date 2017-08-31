@@ -1,0 +1,4 @@
+Name, Best, Average, Memory, Stable, Method
+Selection sort,$n^2$,$n^2$,1,No,Selection
+Insertion sort, $n$,$n^2$,1, Yes, Insertion
+Shell sort,$nlogn$,$nlog^2n$,1,No,Insertion

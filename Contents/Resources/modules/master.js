@@ -98,15 +98,6 @@ window.addEventListener('load', function() {
         }
     }
 
-    var processKatex = function() {
-        var elements = document.body.getElementsByClassName('math')
-        for (var i = 0, l = elements.length; i < l; i++) {
-            var element = elements[i]
-            var math = element.textContent.substr(2, element.textContent.length - 4)
-            katex.render(math, element);
-        }
-    }
-
     var processFlowchart = function() {
         var elements = document.getElementsByClassName('flow hljs')
         for (var i = 0, l = elements.length; i < l; i++) {
@@ -198,7 +189,6 @@ window.addEventListener('load', function() {
     }
 
     var processTest = function() {
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub])
     }
 
     var processAudioLink = function() {
@@ -245,12 +235,11 @@ window.addEventListener('load', function() {
         // processMath()
         processSequencechart()
         processFlowchart()
-        // processMermaid()
         processTags()
         processAudioLink()
         processTest()
-        // processKatex()
         processTOC()
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub])
     }
     //refresh()
     document.body.addEventListener('ia-writer-change', refresh)
