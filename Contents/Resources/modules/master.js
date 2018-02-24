@@ -227,7 +227,7 @@ window.addEventListener('load', function() {
   var refresh = function() {
     splitFootnotesAndCitations()
     relabelFootnotes()
-    processMath()
+    // processMath()
     processHighlight()
     processSequencechart()
     processFlowchart()
@@ -241,17 +241,9 @@ window.addEventListener('load', function() {
   hljs.initHighlightingOnLoad()
 
   //refresh()
-  document.body.addEventListener('ia-writer-change', function() {
-    splitFootnotesAndCitations()
-    relabelFootnotes()
-    // processMath()
-    processHighlight()
-    processSequencechart()
-    processFlowchart()
-    processTags()
-    processAudioLink()
-  })
+  document.body.addEventListener('ia-writer-change', refresh)
 })
+
 document.addEventListener("DOMContentLoaded", function() {
   renderMathInElement(document.body)
 })
